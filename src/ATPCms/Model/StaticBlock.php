@@ -8,7 +8,14 @@ class StaticBlock extends \ATP\ActiveRecord
 	{
 		$this->hasData('Identifier', 'Text')
 			->isIdentifiedBy('Identifier')
-			->belongsToStaticBlockType();
+			->belongsToStaticBlockType()
+			->tableNamespace("cms");
+	}
+	
+	public static function byType($type)
+	{
+		$type = new \ATPCms\Model\StaticBlockType($type);
+		return $type->staticBlockList;
 	}
 }
 StaticBlock::init();

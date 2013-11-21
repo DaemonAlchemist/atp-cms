@@ -31,6 +31,36 @@ return array(
 					),
 				),
 			),
+			'cms_static_block' => array(
+				'displayName' => 'Static Block',
+				'class' => 'ATPCms\Model\StaticBlock',
+				'category' => 'CMS',
+				'displayColumns' => array('Identifier'),
+				'defaultOrder' => 'identifier ASC',
+				'fields' => array(
+					'Identifier' => array(
+						'type' => 'Text',
+						'label' => 'Identifier',
+					),
+					'Text' => array(
+						'type' => 'Html',
+						'label' => 'Block Content',
+					),
+				),
+			),
+			'cms_static_block_type' => array(
+				'displayName' => 'Static Block Type',
+				'class' => 'ATPCms\Model\StaticBlockType',
+				'category' => 'CMS',
+				'displayColumns' => array('Name'),
+				'defaultOrder' => 'name ASC',
+				'fields' => array(
+					'Name' => array(
+						'type' => 'Text',
+						'label' => 'Name',
+					),
+				),
+			),
 		),
 	),
 	'asset_manager' => array(
@@ -60,12 +90,12 @@ return array(
         ),
     ),
     'view_manager' => array(
-        'template_map' => array(
-            'atp-cms/index/index' => __DIR__ . '/../view/atp-cms/index/index.phtml',
-        ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
+	),
+	'view_filters' => array(
+		'ATPCms\View\Filter\StaticBlocks' => array()
 	),
 	'view_helpers' => array(
 		'invokables' => array(
