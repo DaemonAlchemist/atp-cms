@@ -10,6 +10,27 @@
 return array(
 	'admin' => array(
 		'models' =>array(
+			'cms_image' => array(
+				'displayName' => 'Image',
+				'class' => 'ATPCms\Model\Image',
+				'category' => 'CMS',
+				'displayColumns' => array('Identifier'),
+				'defaultOrder' => 'identifier ASC',
+				'fields' => array(
+					'Identifier' => array(
+						'type' => 'Text',
+						'label' => 'Identifier',
+					),
+					'Alt' => array(
+						'type' => 'Text',
+						'label' => 'Alt Text',
+					),
+					'Image' => array(
+						'type' => 'File',
+						'label' => 'Image',
+					),
+				),
+			),
 			'cms_page' => array(
 				'displayName' => 'Page',
 				'class' => 'ATPCms\Model\Page',
@@ -42,6 +63,14 @@ return array(
 						'type' => 'Text',
 						'label' => 'Identifier',
 					),
+					'SortOrder' => array(
+						'type' => 'Text',
+						'label' => 'Sort Order',
+					),
+					'IsActive' => array(
+						'type' => 'Text',
+						'label' => 'Is Active',
+					),
 					'Text' => array(
 						'type' => 'Html',
 						'label' => 'Block Content',
@@ -70,6 +99,11 @@ return array(
 			),
 		),
 	),
+	'block_filters' => array(
+		'block' => 'ATPCms\View\Filter\StaticBlocks',
+		'image' => 'ATPCms\View\Filter\Images',
+		'youtube' => 'ATPCms\View\Filter\Youtube',
+	),
     'router' => array(
         'routes' => array(
             'cms' => array(
@@ -93,9 +127,6 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
-	),
-	'view_filters' => array(
-		'ATPCms\View\Filter\StaticBlocks' => array()
 	),
 	'view_helpers' => array(
 		'invokables' => array(
