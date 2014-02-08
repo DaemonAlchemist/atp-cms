@@ -8,14 +8,14 @@ class StaticBlock extends \ATP\ActiveRecord
 	{
 		$this->hasData('Identifier', 'SortOrder', 'IsActive', 'Text')
 			->isIdentifiedBy('Identifier')
-			->belongsToStaticBlockType()
+			->belongsToCategory()
 			->tableNamespace("cms")
 			->isOrderedBy('sort_order ASC');
 	}
 	
-	public static function byType($type, $activeOnly = true)
+	public static function byCategory($cat, $activeOnly = true)
 	{
-		$type = new \ATPCms\Model\StaticBlockType($type);
+		$type = new \ATPCms\Model\Category($cat);
 		
 		$blocks = array();
 		$blocksRaw = $type->staticBlockList;

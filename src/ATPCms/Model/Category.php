@@ -2,13 +2,14 @@
 
 namespace ATPCms\Model;
 
-class StaticBlockType extends \ATP\ActiveRecord
+class Category extends \ATP\ActiveRecord
 {
 	protected function createDefinition()
 	{
-		$this->hasData('Name')
+		$this->hasData('Name', 'Url', 'IsViewable')
 			->hasStaticBlocks()
-			->isIdentifiedBy('Name')
+			->hasPages()
+			->isIdentifiedBy('Url')
 			->tableNamespace("cms")
 			->isOrderedBy("name ASC");
 	}
@@ -18,4 +19,4 @@ class StaticBlockType extends \ATP\ActiveRecord
 		return $this->name;
 	}
 }
-StaticBlockType::init();
+Category::init();

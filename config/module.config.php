@@ -1,11 +1,4 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2013 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
 
 return array(
 	'admin' => array(
@@ -35,7 +28,7 @@ return array(
 				'displayName' => 'Page',
 				'class' => 'ATPCms\Model\Page',
 				'category' => 'CMS',
-				'displayColumns' => array('Title', 'Url'),
+				'displayColumns' => array('Title', 'Url', 'IsActive'),
 				'defaultOrder' => 'title ASC',
 				'fields' => array(
 					'Title' => array(
@@ -45,6 +38,14 @@ return array(
 					'Url' => array(
 						'type' => 'Text',
 						'label' => 'Url',
+					),
+					'IsActive' => array(
+						'type' => 'Boolean',
+						'label' => 'Is Active',
+					),
+					'Preview' => array(
+						'type' => 'Html',
+						'label' => 'Preview Text'
 					),
 					'Text' => array(
 						'type' => 'Html',
@@ -56,7 +57,7 @@ return array(
 				'displayName' => 'Static Block',
 				'class' => 'ATPCms\Model\StaticBlock',
 				'category' => 'CMS',
-				'displayColumns' => array('Identifier'),
+				'displayColumns' => array('Identifier', 'IsActive'),
 				'defaultOrder' => 'identifier ASC',
 				'fields' => array(
 					'Identifier' => array(
@@ -68,7 +69,7 @@ return array(
 						'label' => 'Sort Order',
 					),
 					'IsActive' => array(
-						'type' => 'Text',
+						'type' => 'Boolean',
 						'label' => 'Is Active',
 					),
 					'Text' => array(
@@ -77,16 +78,24 @@ return array(
 					),
 				),
 			),
-			'cms_static_block_type' => array(
-				'displayName' => 'Static Block Type',
-				'class' => 'ATPCms\Model\StaticBlockType',
+			'cms_category' => array(
+				'displayName' => 'Category',
+				'class' => 'ATPCms\Model\Category',
 				'category' => 'CMS',
-				'displayColumns' => array('Name'),
+				'displayColumns' => array('Name', 'Url', 'IsViewable'),
 				'defaultOrder' => 'name ASC',
 				'fields' => array(
 					'Name' => array(
 						'type' => 'Text',
 						'label' => 'Name',
+					),
+					'Url' => array(
+						'type' => 'Text',
+						'label' => 'Url',
+					),
+					'IsViewable' => array(
+						'type' => 'Boolean',
+						'label' => 'Is Viewable',
 					),
 				),
 			),
@@ -106,13 +115,23 @@ return array(
 	),
     'router' => array(
         'routes' => array(
-            'cms' => array(
+            'cms_page' => array(
                 'type'    => 'Segment',
                 'options' => array(
                     'route'    => '[/cms]/:page',
                     'defaults' => array(
                         'controller'    => 'ATPCms\Controller\IndexController',
-                        'action'        => 'index',
+                        'action'        => 'page',
+                    ),
+                ),
+            ),
+            'cms_category' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/cms/category/:category',
+                    'defaults' => array(
+                        'controller'    => 'ATPCms\Controller\IndexController',
+                        'action'        => 'category',
                     ),
                 ),
             ),
@@ -127,10 +146,5 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
-	),
-	'view_helpers' => array(
-		'invokables' => array(
-			'resize' => 'ATPCore\View\Helper\ImageResizePath',
-		)
 	),
 );

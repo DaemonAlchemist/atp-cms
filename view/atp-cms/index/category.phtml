@@ -1,0 +1,16 @@
+<div id="cms-category">
+	<h1><?=$category->name?></h1>
+	
+	<ul class="cms-page-list">
+		<?php foreach($category->pageList as $page) { ?>
+			<?php if($page->isActive) { ?>
+				<li>
+					<h2><?=$page->title?></h2>
+					<div class="cms-page-preview">
+						<?=$page->preview?>
+					</div>
+				</li>
+			<?php } ?>
+		<?php } ?>
+	</ul>
+</div>

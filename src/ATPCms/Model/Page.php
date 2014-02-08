@@ -6,8 +6,9 @@ class Page extends \ATP\ActiveRecord
 {
 	protected function createDefinition()
 	{
-		$this->hasData('Title', 'Url', 'Text')
+		$this->hasData('Title', 'Url', 'Preview', 'Text', 'IsActive')
 			->isIdentifiedBy('Url')
+			->belongsToCategory()
 			->tableNamespace("cms");
 	}
 
@@ -19,6 +20,20 @@ class Page extends \ATP\ActiveRecord
 	public function displayName()
 	{
 		return $this->title;
+	}
+	
+	public static function byCategory($cat, $activeOnly = true)
+	{
+		$type = new \ATPCms\Model\Category($cat);
+		
+		$pages = array();
+		$pagesRaw = $type->pageList;
+		foreach($pagessRaw as $page)
+		{
+			if(!$activeOnly || $page->isActive) $pages[] = $page;
+		}
+		
+		return $pages;
 	}
 }
 Page::init();
