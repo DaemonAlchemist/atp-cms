@@ -5,7 +5,8 @@
 		<?php foreach($category->pageList as $page) { ?>
 			<?php if($page->isActive) { ?>
 				<li>
-					<h2><?=$page->title?></h2>
+					<img src="<?=$this->basePath() . $page->filePath('thumbnail')?>" alt="<?=$page->title?>"/>
+					<h2><a href="<?=$this->basePath()?>/<?=$page->url?>"><?=$page->title?></a></h2>
 					<div class="cms-page-preview">
 						<?=$page->preview?>
 					</div>

@@ -6,9 +6,10 @@ class Page extends \ATP\ActiveRecord
 {
 	protected function createDefinition()
 	{
-		$this->hasData('Title', 'Url', 'Preview', 'Text', 'IsActive')
+		$this->hasData('Title', 'Url', 'Preview', 'Thumbnail', 'Text', 'IsActive')
 			->isIdentifiedBy('Url')
 			->belongsToCategory()
+			->hasFiles('Thumbnail')
 			->tableNamespace("cms");
 	}
 

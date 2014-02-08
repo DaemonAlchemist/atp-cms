@@ -43,6 +43,10 @@ return array(
 						'type' => 'Boolean',
 						'label' => 'Is Active',
 					),
+					'Thumbnail' => array(
+						'type' => 'File',
+						'label' => 'Thumbnail',
+					),
 					'Preview' => array(
 						'type' => 'Html',
 						'label' => 'Preview Text'
