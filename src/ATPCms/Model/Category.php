@@ -6,7 +6,7 @@ class Category extends \ATP\ActiveRecord
 {
 	protected function createDefinition()
 	{
-		$this->hasData('Name', 'Url', 'IsViewable')
+		$this->hasData('Name', 'Url', 'IsViewable', 'ShowPages', 'Text')
 			->hasStaticBlocks()
 			->hasPages()
 			->isIdentifiedBy('Url')

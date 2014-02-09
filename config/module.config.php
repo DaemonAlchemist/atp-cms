@@ -43,6 +43,10 @@ return array(
 						'type' => 'Boolean',
 						'label' => 'Is Active',
 					),
+					'PostDate' => array(
+						'type' => 'Date',
+						'label' => 'Created On',
+					),
 					'Thumbnail' => array(
 						'type' => 'File',
 						'label' => 'Thumbnail',
@@ -100,6 +104,14 @@ return array(
 					'IsViewable' => array(
 						'type' => 'Boolean',
 						'label' => 'Is Viewable',
+					),
+					'ShowPages' => array(
+						'type' => 'Boolean',
+						'label' => 'Show Pages',
+					),
+					'Text' => array(
+						'type' => 'Html',
+						'label' => 'Text',
 					),
 				),
 			),

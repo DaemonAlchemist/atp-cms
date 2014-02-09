@@ -6,7 +6,7 @@ class Page extends \ATP\ActiveRecord
 {
 	protected function createDefinition()
 	{
-		$this->hasData('Title', 'Url', 'Preview', 'Thumbnail', 'Text', 'IsActive')
+		$this->hasData('Title', 'Url', 'Preview', 'Thumbnail', 'Text', 'IsActive', 'PostDate')
 			->isIdentifiedBy('Url')
 			->belongsToCategory()
 			->hasFiles('Thumbnail')
