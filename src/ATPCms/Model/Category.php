@@ -6,7 +6,7 @@ class Category extends \ATP\ActiveRecord
 {
 	protected function createDefinition()
 	{
-		$this->hasData('Name', 'Url', 'IsViewable', 'ShowPages', 'Text')
+		$this->hasData('Name', 'Url', 'IsViewable', 'ShowPages', 'ShowInHeader', 'Text')
 			->hasStaticBlocks()
 			->hasPages()
 			->isIdentifiedBy('Url')
@@ -17,6 +17,13 @@ class Category extends \ATP\ActiveRecord
 	public function displayName()
 	{
 		return $this->name;
+	}
+	
+	public static function headerCategories()
+	{
+		$where = "show_in_header=1";
+		$cat = new self();
+		return $cat->loadMultiple($where);
 	}
 }
 Category::init();

@@ -105,6 +105,10 @@ return array(
 						'type' => 'Boolean',
 						'label' => 'Is Viewable',
 					),
+					'ShowInHeader' => array(
+						'type' => 'Boolean',
+						'label' => 'Show in Header',
+					),
 					'ShowPages' => array(
 						'type' => 'Boolean',
 						'label' => 'Show Pages',
