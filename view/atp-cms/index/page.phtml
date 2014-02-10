@@ -1,5 +1,5 @@
 <?php $this->breadcrumbs($page->title, $this->basePath . $page->url) ?>
-<?php if($page->category) {$this->breadcrumbs($page->category->name, $this->basePath() . "cms/category/" . $page->category->url);} ?>
+<?php if($page->category->name) {$this->breadcrumbs($page->category->name, $this->basePath() . "cms/category/" . $page->category->url);} ?>
 
 <div class="cms-page" id="cms-page-<?=$page->url?>">
 	<h1><?=$page->title?></h1>
