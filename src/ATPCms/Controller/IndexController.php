@@ -25,6 +25,12 @@ class IndexController extends \ATPCore\Controller\AbstractController
 		
 		$page = new \ATPCms\Model\Page($pageUrl);
 	
+		if(!$page->id)
+		{
+			$this->getResponse()->setStatusCode(404);
+			return;
+		}
+	
 		return new \Zend\View\Model\ViewModel(array(
 			'page' => $page
 		));
@@ -37,6 +43,12 @@ class IndexController extends \ATPCore\Controller\AbstractController
 		$catUrl = $this->params('category');
 		
 		$category = new \ATPCms\Model\Category($catUrl);
+	
+		if(!$category->id)
+		{
+			$this->getResponse()->setStatusCode(404);
+			return;
+		}
 	
 		return new \Zend\View\Model\ViewModel(array(
 			'category' => $category
