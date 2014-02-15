@@ -40,7 +40,7 @@ class IndexController extends \ATPCore\Controller\AbstractController
 	{
 		$this->init();
 	
-		$catUrl = $this->params('category');
+		$catUrl = $this->params('id');
 		
 		$category = new \ATPCms\Model\Category($catUrl);
 	
@@ -53,5 +53,29 @@ class IndexController extends \ATPCore\Controller\AbstractController
 		return new \Zend\View\Model\ViewModel(array(
 			'category' => $category
 		));
+	}
+	
+	public function imageAction()
+	{
+		$this->init();
+		$imageUrl = $this->params('id');
+		
+		$image = new \ATPCms\Model\Image($imageUrl);
+	
+		if(!$image->id)
+		{
+			$this->getResponse()->setStatusCode(404);
+			return;
+		}
+	
+		//Get the base path helper
+		$vhm = $this->getServiceLocator()->get('viewhelpermanager');
+		$headerLinks = $vhm->get('headerLinks');
+		$basePath = $vhm->get('basePath');
+		
+		$path = $image->filePath('image');
+		header("Content-Type: {$image->image->type}");
+		echo file_get_contents("public/{$path}");
+		die();
 	}
 }

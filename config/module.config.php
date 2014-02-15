@@ -145,13 +145,12 @@ return array(
                     ),
                 ),
             ),
-            'cms_category' => array(
+            'cms_other' => array(
                 'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '/cms/category/:category',
+                    'route'    => '/cms/[:action]/:id',
                     'defaults' => array(
                         'controller'    => 'ATPCms\Controller\IndexController',
-                        'action'        => 'category',
                     ),
                 ),
             ),
