@@ -1,5 +1,5 @@
 <?php $this->pageType("cms-category")?>
-<?php $this->breadcrumbs($category->name, $this->basePath . "/cms/category/" . $category->url) ?>
+<?php $this->breadcrumbs($category->name, $this->basePath() . "/cms/category/" . $category->url) ?>
 <?php $this->headTitle($category->name)?>
 
 <div class="cms-category" id="cms-category-<?=$category->url?>">

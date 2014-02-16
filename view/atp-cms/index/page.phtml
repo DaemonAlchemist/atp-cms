@@ -1,5 +1,5 @@
 <?php $this->pageType("cms-page")?>
-<?php $this->breadcrumbs($page->title, $this->basePath . $page->url) ?>
+<?php $this->breadcrumbs($page->title, $this->basePath() . $page->url) ?>
 <?php $this->headTitle($page->title)?>
 
 <?php if($page->category->name && $page->category->isViewable) {
