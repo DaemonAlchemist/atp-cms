@@ -138,7 +138,7 @@ return array(
             'cms_page' => array(
                 'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '[/cms/page]/:page',
+                    'route'    => '[/cms/page]/:page[/]',
                     'defaults' => array(
                         'controller'    => 'ATPCms\Controller\IndexController',
                         'action'        => 'page',
