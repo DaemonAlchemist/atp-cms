@@ -59,6 +59,14 @@ return array(
 						'type' => 'Html',
 						'label' => 'Page Content'
 					),
+					'ExtraCss' => array(
+						'type' => 'Textarea',
+						'label' => 'Extra Styling',
+					),
+					'Script' => array(
+						'type' => 'Textarea',
+						'label' => 'Page Script',
+					),
 				),
 			),
 			'cms_static_block' => array(
