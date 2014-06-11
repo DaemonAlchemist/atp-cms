@@ -129,13 +129,6 @@ return array(
 			),
 		),
 	),
-	'asset_manager' => array(
-		'resolver_configs' => array(
-			'paths' => array(
-				__DIR__ . '/../public',
-			),
-		),
-	),
 	'block_filters' => array(
 		'block' => 'ATPCms\View\Filter\StaticBlocks',
 		'image' => 'ATPCms\View\Filter\Images',
@@ -169,9 +162,4 @@ return array(
             'ATPCms\Controller\IndexController' => 'ATPCms\Controller\IndexController'
         ),
     ),
-    'view_manager' => array(
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
-        ),
-	),
 );
