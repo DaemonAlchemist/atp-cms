@@ -2,15 +2,13 @@
 
 namespace ATPCms\Model;
 
+require_once("Category.php");
+
 class StaticBlock extends \ATP\ActiveRecord
 {
-	protected function createDefinition()
+	protected function setup()
 	{
-		$this->hasData('Identifier', 'SortOrder', 'IsActive', 'Text')
-			->isIdentifiedBy('Identifier')
-			->belongsToCategory()
-			->tableNamespace("cms")
-			->isOrderedBy('sort_order ASC');
+		$this->setTableNamespace("cms");
 	}
 	
 	public static function byCategory($cat, $activeOnly = true)

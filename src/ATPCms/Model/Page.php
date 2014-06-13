@@ -2,15 +2,13 @@
 
 namespace ATPCms\Model;
 
+require_once("Category.php");
+
 class Page extends \ATP\ActiveRecord
 {
-	protected function createDefinition()
+	protected function setup()
 	{
-		$this->hasData('Title', 'Url', 'Preview', 'Thumbnail', 'Text', 'ExtraCss', 'Script', 'IsActive', 'PostDate')
-			->isIdentifiedBy('Url')
-			->belongsToCategory()
-			->hasFiles('Thumbnail')
-			->tableNamespace("cms");
+		$this->setTableNamespace("cms");
 	}
 
 	public static function exists($url)

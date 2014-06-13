@@ -2,16 +2,14 @@
 
 namespace ATPCms\Model;
 
+require_once("Page.php");
+require_once("StaticBlock.php");
+
 class Category extends \ATP\ActiveRecord
 {
-	protected function createDefinition()
+	protected function setup()
 	{
-		$this->hasData('Name', 'Url', 'IsViewable', 'ShowPages', 'ShowInHeader', 'Text')
-			->hasStaticBlocks()
-			->hasPages()
-			->isIdentifiedBy('Url')
-			->tableNamespace("cms")
-			->isOrderedBy("name ASC");
+		$this->setTableNamespace("cms");
 	}
 	
 	public function displayName()

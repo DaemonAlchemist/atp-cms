@@ -9,20 +9,6 @@ return array(
 				'category' => 'CMS',
 				'displayColumns' => array('Identifier'),
 				'defaultOrder' => 'identifier ASC',
-				'fields' => array(
-					'Identifier' => array(
-						'type' => 'Text',
-						'label' => 'Identifier',
-					),
-					'Alt' => array(
-						'type' => 'Text',
-						'label' => 'Alt Text',
-					),
-					'Image' => array(
-						'type' => 'File',
-						'label' => 'Image',
-					),
-				),
 			),
 			'cms_page' => array(
 				'displayName' => 'Page',
@@ -30,44 +16,6 @@ return array(
 				'category' => 'CMS',
 				'displayColumns' => array('Title', 'Url', 'IsActive'),
 				'defaultOrder' => 'title ASC',
-				'fields' => array(
-					'Title' => array(
-						'type' => 'Text',
-						'label' => 'Title'
-					),
-					'Url' => array(
-						'type' => 'Text',
-						'label' => 'Url',
-					),
-					'IsActive' => array(
-						'type' => 'Boolean',
-						'label' => 'Is Active',
-					),
-					'PostDate' => array(
-						'type' => 'Date',
-						'label' => 'Created On',
-					),
-					'Thumbnail' => array(
-						'type' => 'File',
-						'label' => 'Thumbnail',
-					),
-					'Preview' => array(
-						'type' => 'Html',
-						'label' => 'Preview Text'
-					),
-					'Text' => array(
-						'type' => 'Html',
-						'label' => 'Page Content'
-					),
-					'ExtraCss' => array(
-						'type' => 'Textarea',
-						'label' => 'Extra Styling',
-					),
-					'Script' => array(
-						'type' => 'Textarea',
-						'label' => 'Page Script',
-					),
-				),
 			),
 			'cms_static_block' => array(
 				'displayName' => 'Static Block',
@@ -75,24 +23,6 @@ return array(
 				'category' => 'CMS',
 				'displayColumns' => array('Identifier', 'IsActive'),
 				'defaultOrder' => 'identifier ASC',
-				'fields' => array(
-					'Identifier' => array(
-						'type' => 'Text',
-						'label' => 'Identifier',
-					),
-					'SortOrder' => array(
-						'type' => 'Text',
-						'label' => 'Sort Order',
-					),
-					'IsActive' => array(
-						'type' => 'Boolean',
-						'label' => 'Is Active',
-					),
-					'Text' => array(
-						'type' => 'Html',
-						'label' => 'Block Content',
-					),
-				),
 			),
 			'cms_category' => array(
 				'displayName' => 'Category',
@@ -100,32 +30,6 @@ return array(
 				'category' => 'CMS',
 				'displayColumns' => array('Name', 'Url', 'IsViewable'),
 				'defaultOrder' => 'name ASC',
-				'fields' => array(
-					'Name' => array(
-						'type' => 'Text',
-						'label' => 'Name',
-					),
-					'Url' => array(
-						'type' => 'Text',
-						'label' => 'Url',
-					),
-					'IsViewable' => array(
-						'type' => 'Boolean',
-						'label' => 'Is Viewable',
-					),
-					'ShowInHeader' => array(
-						'type' => 'Boolean',
-						'label' => 'Show in Header',
-					),
-					'ShowPages' => array(
-						'type' => 'Boolean',
-						'label' => 'Show Pages',
-					),
-					'Text' => array(
-						'type' => 'Html',
-						'label' => 'Text',
-					),
-				),
 			),
 		),
 	),
@@ -145,6 +49,7 @@ return array(
                         'action'        => 'page',
                     ),
                 ),
+				'priority' => -999,
             ),
             'cms_other' => array(
                 'type'    => 'Segment',
