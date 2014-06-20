@@ -6,11 +6,6 @@ require_once("Category.php");
 
 class Page extends \ATP\ActiveRecord
 {
-	protected function setup()
-	{
-		$this->setTableNamespace("cms");
-	}
-
 	public static function exists($url)
 	{
 		return $url == "test-page";

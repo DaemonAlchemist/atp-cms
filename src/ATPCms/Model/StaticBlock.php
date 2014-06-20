@@ -6,11 +6,6 @@ require_once("Category.php");
 
 class StaticBlock extends \ATP\ActiveRecord
 {
-	protected function setup()
-	{
-		$this->setTableNamespace("cms");
-	}
-	
 	public static function byCategory($cat, $activeOnly = true)
 	{
 		$type = new \ATPCms\Model\Category($cat);

@@ -7,11 +7,6 @@ require_once("StaticBlock.php");
 
 class Category extends \ATP\ActiveRecord
 {
-	protected function setup()
-	{
-		$this->setTableNamespace("cms");
-	}
-	
 	public function displayName()
 	{
 		return $this->name;

@@ -3,28 +3,28 @@
 return array(
 	'admin' => array(
 		'models' =>array(
-			'cms_image' => array(
+			'atpcms_image' => array(
 				'displayName' => 'Image',
 				'class' => 'ATPCms\Model\Image',
 				'category' => 'CMS',
 				'displayColumns' => array('Identifier'),
 				'defaultOrder' => 'identifier ASC',
 			),
-			'cms_page' => array(
+			'atpcms_page' => array(
 				'displayName' => 'Page',
 				'class' => 'ATPCms\Model\Page',
 				'category' => 'CMS',
 				'displayColumns' => array('Title', 'Url', 'IsActive'),
 				'defaultOrder' => 'title ASC',
 			),
-			'cms_static_block' => array(
+			'atpcms_static_block' => array(
 				'displayName' => 'Static Block',
 				'class' => 'ATPCms\Model\StaticBlock',
 				'category' => 'CMS',
 				'displayColumns' => array('Identifier', 'IsActive'),
 				'defaultOrder' => 'identifier ASC',
 			),
-			'cms_category' => array(
+			'atpcms_category' => array(
 				'displayName' => 'Category',
 				'class' => 'ATPCms\Model\Category',
 				'category' => 'CMS',
