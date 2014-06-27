@@ -6,7 +6,9 @@ class Images extends \ATPCore\View\Filter\AbstractBlockFilter
 {
 	protected function _loadObject($id)
 	{
-		return new \ATPCms\Model\Image($id);
+		$image = new \ATPCms\Model\Image();
+		$image->loadByIdentifier($id);
+		return $image;
 	}
 	
 	protected function _replace($image)
@@ -17,7 +19,7 @@ class Images extends \ATPCore\View\Filter\AbstractBlockFilter
 		$hm = $vm->getHelperManager();
 		$basePath = $hm->get("basepath");
 		
-		$path = $basePath($image->filePath('image'));
+		$path = $basePath($image->filePath('imageFile'));
 		$alt = $image->alt;
 		
 		return "<img src=\"{$path}\" alt=\"{$alt}\" />";

@@ -23,7 +23,8 @@ class IndexController extends \ATPCore\Controller\AbstractController
 		
 		$pageUrl = $this->params('page');
 		
-		$page = new \ATPCms\Model\Page($pageUrl);
+		$page = new \ATPCms\Model\Page();
+		$page->loadByUrl($pageUrl);
 	
 		if(!$page->id)
 		{
@@ -42,7 +43,8 @@ class IndexController extends \ATPCore\Controller\AbstractController
 	
 		$catUrl = $this->params('id');
 		
-		$category = new \ATPCms\Model\Category($catUrl);
+		$category = new \ATPCms\Model\Category();
+		$category->loadByUrl($catUrl);
 	
 		if(!$category->id)
 		{

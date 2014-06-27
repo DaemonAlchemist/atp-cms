@@ -6,11 +6,13 @@ class StaticBlocks extends \ATPCore\View\Filter\AbstractBlockFilter
 {
 	protected function _loadObject($id)
 	{
-		return new \ATPCms\Model\StaticBlock($id);
+		$block = new \ATPCms\Model\StaticBlock();
+		$block->loadByIdentifier($id);
+		return $block;
 	}
 	
 	protected function _replace($block)
 	{
-		return $block->text;
+		return $block->contentHtml;
 	}
 }
