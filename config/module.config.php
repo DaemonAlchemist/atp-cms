@@ -40,10 +40,20 @@ return array(
 	),
     'router' => array(
         'routes' => array(
+            'cms_page_full' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/cms/page/:page[/]',
+                    'defaults' => array(
+                        'controller'    => 'ATPCms\Controller\IndexController',
+                        'action'        => 'page',
+                    ),
+                ),
+            ),
             'cms_page' => array(
                 'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '[/cms/page]/:page[/]',
+                    'route'    => '/:page[/]',
                     'defaults' => array(
                         'controller'    => 'ATPCms\Controller\IndexController',
                         'action'        => 'page',
