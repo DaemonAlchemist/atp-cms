@@ -1,6 +1,11 @@
 <?php
 
 return array(
+	'modules' => array(
+		'ATPCms' => array(
+			'version' => '1.0',
+		),
+	),
 	'admin' => array(
 		'models' =>array(
 			'atpcms_image' => array(
