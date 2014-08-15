@@ -14,9 +14,10 @@ class Category extends \ATP\ActiveRecord
 	
 	public static function headerCategories()
 	{
-		$where = "show_in_header=1";
 		$cat = new self();
-		return $cat->loadMultiple($where);
+		return $cat->loadMultiple(array(
+			'where' => "show_in_header=1"
+		));
 	}
 	
 	public function mostRecent($count)
