@@ -1,0 +1,14 @@
+{
+    "name": "daemonalchemist/atp-cms",
+    "description": "Cms module for ATP framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Wittrock",
+            "email": "andy@wittrock.us"
+        }
+    ],
+    "require": {
+		"daemonalchemist/atp-core": "dev-master"
+    }
+}
