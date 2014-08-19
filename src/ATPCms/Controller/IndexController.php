@@ -62,7 +62,8 @@ class IndexController extends \ATPCore\Controller\AbstractController
 		$this->init();
 		$imageUrl = $this->params('id');
 		
-		$image = new \ATPCms\Model\Image($imageUrl);
+		$image = new \ATPCms\Model\Image();
+		$image->loadByIdentifier($imageUrl);
 	
 		if(!$image->id)
 		{
@@ -75,8 +76,8 @@ class IndexController extends \ATPCore\Controller\AbstractController
 		$headerLinks = $vhm->get('headerLinks');
 		$basePath = $vhm->get('basePath');
 		
-		$path = $image->filePath('image');
-		header("Content-Type: {$image->image->type}");
+		$path = $image->filePath('imageFile');
+		header("Content-Type: {$image->imageFile->type}");
 		echo file_get_contents("public/{$path}");
 		die();
 	}
