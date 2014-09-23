@@ -16,6 +16,13 @@ return array(
 				'category' => 'CMS',
 				'displayColumns' => array('Title', 'Url', 'IsActive'),
 				'defaultOrder' => 'title ASC',
+				'tabs' => array(
+					'Details' => array('category_id', 'title', 'url', 'is_active', 'post_date'),
+					'Images' => array('thumbnail_file'),
+					'Content' => array('preview_html', 'content_html'),
+					'Styling' => array('extra_css'),
+					'Scripting' => array('script'),
+				),
 			),
 			'atpcms_static_block' => array(
 				'displayName' => 'Static Block',
@@ -23,6 +30,10 @@ return array(
 				'category' => 'CMS',
 				'displayColumns' => array('Identifier', 'IsActive'),
 				'defaultOrder' => 'identifier ASC',
+				'tabs' => array(
+					'Details' => array('category_id', 'identifier', 'sort_order', 'is_active'),
+					'Content' => array('content_html'),
+				),
 			),
 			'atpcms_category' => array(
 				'displayName' => 'Category',
@@ -30,6 +41,11 @@ return array(
 				'category' => 'CMS',
 				'displayColumns' => array('Name', 'Url', 'IsViewable'),
 				'defaultOrder' => 'name ASC',
+				'tabs' => array(
+					'Details' => array('name', 'url'),
+					'Options' => array('is_viewable', 'show_pages', 'show_in_header'),
+					'Content' => array('description_html'),
+				),
 			),
 		),
 	),
