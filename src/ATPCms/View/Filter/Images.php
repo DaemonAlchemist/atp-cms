@@ -8,6 +8,10 @@ class Images extends \ATPCore\View\Filter\AbstractBlockFilter
 	{
 		$image = new \ATPCms\Model\Image();
 		$image->loadByIdentifier($id);
+		if(!$image->id)
+		{
+			$image->loadById($id);
+		}
 		return $image;
 	}
 	
