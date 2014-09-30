@@ -4,26 +4,5 @@
 
 <div class="cms-category" id="cms-category-<?=$category->url?>">
 	<h1><?=$category->name?></h1>
-	
-	<ul class="cms-page-list">
-		<?php foreach($category->getAtpcmsPagesByCategory() as $page) { ?>
-			<?php if($page->isActive) { ?>
-				<li>
-					<a href="<?=$this->basePath()?>/<?=$page->url?>">
-						<?php if($page->thumbnailFile->exists()) { ?>
-							<div class="item-thumb">
-								<img src="<?=$this->basePath() . $page->filePath('thumbnailFile')?>" alt="<?=$page->title?>"/>
-							</div>
-						<?php } else { ?>
-							<div class="item-thumb no-thumb"></div>
-						<?php } ?>
-					</a>
-					<h2><a href="<?=$this->basePath()?>/<?=$page->url?>"><?=$page->title?></a></h2>
-					<div class="cms-page-preview">
-						<?=$page->previewHtml?>
-					</div>
-				</li>
-			<?php } ?>
-		<?php } ?>
-	</ul>
+	<?=$posts?>
 </div>

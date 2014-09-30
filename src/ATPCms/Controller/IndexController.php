@@ -52,9 +52,17 @@ class IndexController extends \ATPCore\Controller\AbstractController
 			return;
 		}
 	
-		return new \Zend\View\Model\ViewModel(array(
-			'category' => $category
-		));
+		//Create the view
+		$view = new \Zend\View\Model\ViewModel();
+		$view->category = $category;
+		
+		//Create post list widget
+		$posts = new \ATPCms\View\Widget\MostRecentPost();
+		$posts->category = $category;
+		$posts->postCount = 0;
+		$view->addChild($posts, 'posts');
+		
+		return $view;
 	}
 	
 	public function imageAction()

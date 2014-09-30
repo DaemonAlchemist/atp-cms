@@ -1,0 +1,26 @@
+<?php $this->appendCss("/atp-cms/css/cms.less")?>
+
+<ul class="cms-page-list">
+	<?php foreach($category->mostRecent($postCount) as $page) { ?>
+		<?php if($page->isActive) { ?>
+			<li>
+				<a href="<?=$this->url('cms_page', array('page' => $page->url))?>">
+					<?php if($page->thumbnailFile->exists()) { ?>
+						<div class="item-thumb">
+							<img src="<?=$this->basePath() . $page->filePath('thumbnailFile')?>" alt="<?=$page->title?>"/>
+						</div>
+					<?php } else { ?>
+						<div class="item-thumb no-thumb"></div>
+					<?php } ?>
+				</a>
+				<h2><a href="<?=$this->url('cms_page', array('page' => $page->url))?>">
+					<?=$page->title?>
+				</a></h2>
+				<div class="cms-page-preview">
+					<?=!empty($page->previewHtml) ? $page->previewHtml : $page->contentHtml?>
+				</div>
+				<div class="cms-post-date"><?=date("F j, Y", strtotime($page->postDate))?></div>
+			</li>
+		<?php } ?>
+	<?php } ?>
+</ul>

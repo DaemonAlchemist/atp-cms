@@ -1,0 +1,25 @@
+@import "definitions.less";
+
+div.cms-category {
+	h1 {.buffered; font-size: 18pt; border-bottom: solid 2px;}
+}
+
+ul.cms-page-list {
+	.buffered;
+	li {
+		h2 {
+			.buffered; float: left; .spaced(1); background: @ll; width: 100%;
+			a {text-decoration: none;}
+		}
+		div.cms-page-preview {clear: both; border-bottom: dashed 1px; .buffered;}
+		div.cms-post-date {float: right; font-style: italic; font-size: small;}
+		
+	}
+}
+
+div.cms-page {
+	h1 {.buffered; border-bottom: solid 2px; font-size: 18pt;}
+	.cms-page-content {
+		.buffered;
+	}
+}

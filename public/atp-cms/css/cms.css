@@ -1,0 +1,45 @@
+.buffered {
+ padding: 4px 8px;
+}
+.shadowed {
+ box-shadow: 0px 0px 8px;
+}
+.text-padding {
+ margin: 8px;
+}
+div.cms-category h1 {
+ padding: 4px 8px;
+ font-size: 18pt;
+ border-bottom: solid 2px;
+}
+ul.cms-page-list {
+ padding: 4px 8px;
+}
+ul.cms-page-list li h2 {
+ padding: 4px 8px;
+ float: left;
+ margin-bottom: 8px;
+ background: #aacff4;
+ width: 100%;
+}
+ul.cms-page-list li h2 a {
+ text-decoration: none;
+}
+ul.cms-page-list li div.cms-page-preview {
+ clear: both;
+ border-bottom: dashed 1px;
+ padding: 4px 8px;
+}
+ul.cms-page-list li div.cms-post-date {
+ float: right;
+ font-style: italic;
+ font-size: small;
+}
+div.cms-page h1 {
+ padding: 4px 8px;
+ border-bottom: solid 2px;
+ font-size: 18pt;
+}
+div.cms-page .cms-page-content {
+ padding: 4px 8px;
+}

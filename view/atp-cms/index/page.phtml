@@ -1,6 +1,7 @@
 <?php $this->pageType("cms-page")?>
 <?php $this->breadcrumbs($page->title, $this->basePath($page->url)) ?>
 <?php $this->headTitle($page->title)?>
+<?php $this->appendCss("/atp-cms/css/cms.less")?>
 
 <?php if($page->category->name && $page->category->isViewable) {
 	$this->breadcrumbs($page->category->name, $this->basePath("cms/category/" . $page->category->url));

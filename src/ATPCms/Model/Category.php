@@ -23,12 +23,16 @@ class Category extends \ATP\ActiveRecord
 	public function mostRecent($count)
 	{
 		$page = new Page();
-		return $page->loadMultiple(array(
+		$options = array(
 			'where' => "category_id = ? AND is_active=1",
 			'data' => array($this->id),
 			'orderBy' => "post_date DESC", 
-			'limit' => $count
-		));
+		);
+		if($count > 0)
+		{
+			$options['limit'] = $count;
+		}
+		return $page->loadMultiple($options);
 	}
 }
 Category::init();
