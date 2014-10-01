@@ -43,3 +43,19 @@ div.cms-page h1 {
 div.cms-page .cms-page-content {
  padding: 4px 8px;
 }
+div.captioned-image {
+ border: solid 2px #aacff4;
+ display: inline-block;
+ background: #aacff4;
+ padding-top: 8px;
+}
+div.captioned-image img {
+ display: block;
+ margin: auto;
+ margin-bottom: 8px;
+}
+div.captioned-image span {
+ display: block;
+ background: #e4f0fc;
+ padding: 4px 8px;
+}
