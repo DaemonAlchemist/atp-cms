@@ -3,7 +3,7 @@
 return array(
 	'modules' => array(
 		'ATPCms' => array(
-			'version' => '1.0',
+			'version' => '0.9.0',
 		),
 	),
 );
