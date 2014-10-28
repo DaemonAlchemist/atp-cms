@@ -17,7 +17,7 @@
 					<?=$page->title?>
 				</a></h2>
 				<div class="cms-page-preview">
-					<?=!empty($page->previewHtml) ? $page->previewHtml : $page->contentHtml?>
+					<?=(strlen($page->previewHtml) > 0) ? $page->previewHtml : ""?>
 				</div>
 				<div class="cms-post-date"><?=date("F j, Y", strtotime($page->postDate))?></div>
 			</li>

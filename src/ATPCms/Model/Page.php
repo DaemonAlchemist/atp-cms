@@ -22,7 +22,7 @@ class Page extends \ATP\ActiveRecord
 		
 		$pages = array();
 		$pagesRaw = $type->pageList;
-		foreach($pagessRaw as $page)
+		foreach($pagesRaw as $page)
 		{
 			if(!$activeOnly || $page->isActive) $pages[] = $page;
 		}
