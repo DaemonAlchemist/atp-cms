@@ -12,8 +12,8 @@ class Module extends \ATP\Module
 		return array(
 			"CREATE TABLE `atpcms_categories` (
 				`id` int(11) NOT NULL AUTO_INCREMENT,
-				`url` char(32) COLLATE utf8_unicode_ci DEFAULT NULL,
-				`name` char(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+				`url` char(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+				`name` char(255) COLLATE utf8_unicode_ci DEFAULT NULL,
 				`is_viewable` tinyint(1) NOT NULL DEFAULT '1',
 				`show_pages` tinyint(1) NOT NULL DEFAULT '1',
 				`show_in_header` tinyint(1) NOT NULL DEFAULT '0',
@@ -26,7 +26,7 @@ class Module extends \ATP\Module
 			
 			"CREATE TABLE `atpcms_images` (
 				`id` int(11) NOT NULL AUTO_INCREMENT,
-				`identifier` char(32) COLLATE utf8_unicode_ci NOT NULL,
+				`identifier` char(255) COLLATE utf8_unicode_ci NOT NULL,
 				`alt` char(255) COLLATE utf8_unicode_ci DEFAULT NULL,
 				`image_file` char(255) COLLATE utf8_unicode_ci DEFAULT NULL,
 				PRIMARY KEY (`id`),
@@ -36,7 +36,7 @@ class Module extends \ATP\Module
 			"CREATE TABLE `atpcms_pages` (
 				`id` int(11) NOT NULL AUTO_INCREMENT,
 				`title` char(255) COLLATE utf8_unicode_ci NOT NULL,
-				`url` char(32) COLLATE utf8_unicode_ci NOT NULL,
+				`url` char(255) COLLATE utf8_unicode_ci NOT NULL,
 				`category_id` int(11) DEFAULT NULL,
 				`is_active` tinyint(1) NOT NULL DEFAULT '1',
 				`post_date` datetime DEFAULT NULL,
@@ -55,7 +55,7 @@ class Module extends \ATP\Module
 
 			"CREATE TABLE `atpcms_static_blocks` (
 				`id` int(11) NOT NULL AUTO_INCREMENT,
-				`identifier` char(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+				`identifier` char(255) COLLATE utf8_unicode_ci DEFAULT NULL,
 				`category_id` int(11) DEFAULT NULL,
 				`content_html` longtext COLLATE utf8_unicode_ci,
 				`sort_order` int(11) DEFAULT NULL,
