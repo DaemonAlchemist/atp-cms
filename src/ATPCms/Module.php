@@ -24,6 +24,11 @@ class Module extends \ATP\Module
 				KEY `header_index` (`show_in_header`)
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci",
 			
+			"INSERT INTO atpcms_categories (url, name, show_in_header) values
+			 ('news', 'News', 1),
+			 ('blog', 'Blog', 1)
+			",
+			
 			"CREATE TABLE `atpcms_images` (
 				`id` int(11) NOT NULL AUTO_INCREMENT,
 				`identifier` char(255) COLLATE utf8_unicode_ci NOT NULL,
