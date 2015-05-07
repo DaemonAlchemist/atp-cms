@@ -26,7 +26,8 @@ class Module extends \ATP\Module
 			
 			"INSERT INTO atpcms_categories (url, name, show_in_header) values
 			 ('news', 'News', 1),
-			 ('blog', 'Blog', 1)
+			 ('blog', 'Blog', 1),
+			 ('information', 'Information', 1)			 
 			",
 			
 			"CREATE TABLE `atpcms_images` (
@@ -58,6 +59,11 @@ class Module extends \ATP\Module
 				CONSTRAINT `cms_pages_category_fk` FOREIGN KEY (`category_id`) REFERENCES `atpcms_categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci",
 
+			"INSERT INTO atpcms_pages (title, url, category_id, post_date, content_html) values
+			 ('Homepage', 'home', 3, NOW(), 'Homepage content goes here'),
+			 ('About this Website', 'about', 3, NOW(), 'About page content goes here')
+			",
+			
 			"CREATE TABLE `atpcms_static_blocks` (
 				`id` int(11) NOT NULL AUTO_INCREMENT,
 				`identifier` char(255) COLLATE utf8_unicode_ci DEFAULT NULL,
