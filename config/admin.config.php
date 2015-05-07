@@ -48,5 +48,13 @@ return array(
 				),
 			),
 		),
+		'parameters' => array(
+			'cms-date-format' => array(
+				'displayName' => 'Date Format',
+				'group' => 'CMS',
+				'type' => 'Text',
+				'default' => 'F jS, Y \a\t H:i',
+			),
+		),
 	),
 );
