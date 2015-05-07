@@ -32,9 +32,12 @@ class IndexController extends \ATPCore\Controller\AbstractController
 			return;
 		}
 	
-		return new \Zend\View\Model\ViewModel(array(
-			'page' => $page
-		));
+		$pageWidget = new \ATPCms\View\Widget\Page();
+		$pageWidget->page = $page;
+	
+		$view = new \Zend\View\Model\ViewModel();
+		$view->addChild($pageWidget, 'page');
+		return $view;
 	}
 	
 	public function categoryAction()
