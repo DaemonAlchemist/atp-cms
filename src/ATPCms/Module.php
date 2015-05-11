@@ -7,6 +7,13 @@ class Module extends \ATP\Module
 	protected $_moduleName = "ATPCms";
 	protected $_moduleBaseDir = __DIR__;
 	
+	protected function getInstallFiles()
+	{
+		return array(
+			"media/no-image.png" => "public/uploads/atpcms_images/1/no-image.png",
+		);
+	}
+	
 	protected function getInstallDbQueries()
 	{
 		return array(
@@ -38,6 +45,10 @@ class Module extends \ATP\Module
 				PRIMARY KEY (`id`),
 				UNIQUE KEY `identifier_UNIQUE` (`identifier`)
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci",
+			
+			"INSERT INTO atpcms_images (identifier, alt, image_file) values
+			 ('no-image', 'Missing Image', '{\"name\":\"no-image.png\",\"type\":\"image\/png\",\"size\":14435}')
+			",
 			
 			"CREATE TABLE `atpcms_pages` (
 				`id` int(11) NOT NULL AUTO_INCREMENT,

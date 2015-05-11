@@ -8,5 +8,12 @@ class Image extends \ATP\ActiveRecord
 	{
 		return $this->identifier;
 	}
+	
+	public static function missingImage()
+	{
+		$image = new self();
+		$image->loadByIdentifier("no-image");
+		return $image;
+	}
 }
 Image::init();
