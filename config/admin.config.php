@@ -53,7 +53,7 @@ return array(
 				'displayName' => 'Date Format',
 				'group' => 'CMS',
 				'type' => 'Text',
-				'default' => 'F jS, Y \a\t H:i',
+				'default' => 'F jS, Y \a\t g:i a',
 			),
 		),
 	),
