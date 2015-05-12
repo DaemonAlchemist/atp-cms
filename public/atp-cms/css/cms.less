@@ -1,32 +1,12 @@
-@import "definitions.less";
-
-div.cms-category {
-	h1 {.buffered; font-size: 18pt; border-bottom: solid 2px;}
-}
-
-ul.cms-page-list {
-	.buffered;
-	li {
-		h2 {
-			.buffered; float: left; .spaced(1); background: @ll; width: 100%;
-			a {text-decoration: none;}
-		}
-		div.cms-page-preview {clear: both; border-bottom: dashed 1px; .buffered;}
-		div.cms-post-date {float: right; font-style: italic; font-size: small;}
-		
-	}
-}
-
 div.cms-page {
-	h1 {.buffered; border-bottom: solid 2px; font-size: 18pt;}
-	.cms-page-content {
-		.buffered;
+	position: relative;
+	p.cms-post-date {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin: 0 8px 0 0;
 	}
-}
-
-div.captioned-image {
-	border: solid 2px @ll; display: inline-block; background: @ll; padding-top: @gutterWidth;
-	img {display: block; margin: auto; .spaced(1);}
-	span {display: block; background: @hl; .buffered;}
-	
+	div.cms-page-content {
+		margin: 8px;
+	}
 }
