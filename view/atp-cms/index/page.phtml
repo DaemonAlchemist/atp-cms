@@ -1,1 +1,11 @@
-<?=$page?>
+<?php $this->pageType("cms-page")?>
+
+<?php $this->headTitle($page->title)?>
+
+<?php $this->breadcrumbs($page->title, $this->basePath($page->url)) ?>
+<?php if($page->category->name && $page->category->isViewable) {
+	$this->breadcrumbs($page->category->name, $this->basePath("cms/category/" . $page->category->url));
+	$this->headTitle($page->category->name);
+} ?>
+
+<?=$pageWidget?>

@@ -15,6 +15,7 @@ class IndexController extends \ATPCore\Controller\AbstractController
 		{
 			$headerLinks($cat->name, $basePath() . "/cms/category/" . $cat->url);
 		}
+		$headerLinks->setTitle("Links");
 	}
 
 	public function pageAction()
@@ -36,7 +37,8 @@ class IndexController extends \ATPCore\Controller\AbstractController
 		$pageWidget->page = $page;
 	
 		$view = new \Zend\View\Model\ViewModel();
-		$view->addChild($pageWidget, 'page');
+		$view->page = $page;
+		$view->addChild($pageWidget, 'pageWidget');
 		return $view;
 	}
 	
@@ -82,11 +84,6 @@ class IndexController extends \ATPCore\Controller\AbstractController
 			return;
 		}
 	
-		//Get the base path helper
-		$vhm = $this->getServiceLocator()->get('viewhelpermanager');
-		$headerLinks = $vhm->get('headerLinks');
-		$basePath = $vhm->get('basePath');
-		
 		$path = $image->filePath('imageFile');
 		header("Content-Type: {$image->imageFile->type}");
 		echo file_get_contents("public/{$path}");
