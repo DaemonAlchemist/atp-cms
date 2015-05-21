@@ -6,6 +6,11 @@ require_once("Category.php");
 
 class StaticBlock extends \ATP\ActiveRecord
 {
+	public function displayName()
+	{
+		return $this->identifier;
+	}
+
 	public static function byCategory($cat, $activeOnly = true)
 	{
 		$type = new \ATPCms\Model\Category();

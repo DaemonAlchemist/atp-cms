@@ -28,7 +28,7 @@ return array(
 				'displayName' => 'Static Block',
 				'class' => 'ATPCms\Model\StaticBlock',
 				'category' => 'CMS',
-				'displayColumns' => array('Identifier', 'IsActive'),
+				'displayColumns' => array('Category', 'IsActive'),
 				'defaultOrder' => 'identifier ASC',
 				'tabs' => array(
 					'Details' => array('category_id', 'identifier', 'sort_order', 'is_active'),
