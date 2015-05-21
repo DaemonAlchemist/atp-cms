@@ -13,6 +13,6 @@ class StaticBlocks extends \ATPCore\View\Filter\AbstractBlockFilter
 	
 	protected function _replace($block)
 	{
-		return $block->contentHtml;
+		return "<div class=\"static-block {$block->identifier}\">{$block->contentHtml}</div>";
 	}
 }
