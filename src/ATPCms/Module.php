@@ -62,13 +62,15 @@ class Module extends \ATP\Module
 				`content_html` longtext COLLATE utf8_unicode_ci,
 				`extra_css` longtext COLLATE utf8_unicode_ci,
 				`script` longtext COLLATE utf8_unicode_ci,
+				`meta_keywords` longtext COLLATE utf8_unicode_ci,
+				`meta_description` longtext COLLATE utf8_unicode_ci,
 				PRIMARY KEY (`id`),
 				UNIQUE KEY `url_UNIQUE` (`url`),
 				KEY `category_index` (`category_id`),
 				KEY `active_index` (`is_active`),
 				KEY `date_index` (`post_date`),
 				CONSTRAINT `cms_pages_category_fk` FOREIGN KEY (`category_id`) REFERENCES `atpcms_categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci",
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;",
 
 			"INSERT INTO atpcms_pages (title, url, category_id, post_date, content_html) values
 			 ('Homepage', 'home', 3, NOW(), 'Homepage content goes here'),
