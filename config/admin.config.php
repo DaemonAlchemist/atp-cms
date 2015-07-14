@@ -18,6 +18,7 @@ return array(
 				'defaultOrder' => 'title ASC',
 				'tabs' => array(
 					'Details' => array('category_id', 'title', 'url', 'is_active', 'post_date'),
+					'Meta Data' => array('meta_keywords', 'meta_description'),
 					'Images' => array('thumbnail_file'),
 					'Content' => array('preview_html', 'content_html'),
 					'Styling' => array('extra_css'),
