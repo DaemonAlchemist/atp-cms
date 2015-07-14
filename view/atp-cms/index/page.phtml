@@ -2,6 +2,9 @@
 
 <?php $this->headTitle($page->title)?>
 
+<?php $this->metaKeywords($page->metaKeywords)?>
+<?php $this->metaDescription($page->metaDescription)?>
+
 <?php $this->breadcrumbs($page->title, $this->basePath($page->url)) ?>
 <?php if($page->category->name && $page->category->isViewable) {
 	$this->breadcrumbs($page->category->name, $this->basePath("cms/category/" . $page->category->url));
