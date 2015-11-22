@@ -1,12 +1,12 @@
 div.cms-page {
- position: relative;
+  position: relative;
 }
 div.cms-page p.cms-post-date {
- position: absolute;
- right: 0;
- top: 0;
- margin: 0 8px 0 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0 8px 0 0;
 }
 div.cms-page div.cms-page-content {
- margin: 8px;
+  margin: 8px;
 }
