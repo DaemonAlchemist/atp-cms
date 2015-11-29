@@ -6,6 +6,8 @@ class IndexController extends \ATPCore\Controller\AbstractController
 {
 	public function init()
 	{
+        $this->cacheFor(24*60*60);
+
 		$vhm = $this->getServiceLocator()->get('viewhelpermanager');
 		$headerLinks = $vhm->get('headerLinks');
 		$basePath = $vhm->get('basePath');
