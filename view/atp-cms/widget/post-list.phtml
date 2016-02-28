@@ -19,7 +19,9 @@
 				<div class="cms-page-preview">
 					<?=(strlen($page->previewHtml) > 0) ? $page->previewHtml : ""?>
 				</div>
-				<div class="cms-post-date"><?=date("F j, Y", strtotime($page->postDate))?></div>
+                <?php if($this->siteParam('cms-show-list-dates') && $page->hasPostDate()) { ?>
+                    <div class="cms-post-date"><?=date("F j, Y", strtotime($page->postDate))?></div>
+                <?php } ?>
 			</div>
 		<?php } ?>
 	<?php } ?>

@@ -29,5 +29,10 @@ class Page extends \ATP\ActiveRecord
 		
 		return $pages;
 	}
+
+    public function hasPostDate()
+    {
+        return !empty($this->postDate) && $this->postDate != '0000-00-00 00:00:00';
+    }
 }
 Page::init();

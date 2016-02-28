@@ -56,6 +56,18 @@ return array(
 				'type' => 'Text',
 				'default' => 'F jS, Y \a\t g:i a',
 			),
+            'cms-show-post-date' => array(
+                'displayName' => 'Show Dates on Posts',
+                'group' => 'CMS',
+                'type' => 'Boolean',
+                'default' => 1,
+            ),
+            'cms-show-list-dates' => array(
+                'displayName' => 'Show Dates on Post Lists',
+                'group' => 'CMS',
+                'type' => 'Boolean',
+                'default' => 1,
+            )
 		),
 	),
 );
