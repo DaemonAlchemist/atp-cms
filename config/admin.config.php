@@ -6,14 +6,14 @@ return array(
 			'atpcms_image' => array(
 				'displayName' => 'Image',
 				'class' => 'ATPCms\Model\Image',
-				'category' => 'CMS',
+				'category' => 'Content',
 				'displayColumns' => array('Identifier'),
 				'defaultOrder' => 'identifier ASC',
 			),
 			'atpcms_page' => array(
 				'displayName' => 'Page',
 				'class' => 'ATPCms\Model\Page',
-				'category' => 'CMS',
+                'category' => 'Content',
 				'displayColumns' => array('Title', 'Url', 'IsActive'),
 				'defaultOrder' => 'title ASC',
 				'tabs' => array(
@@ -28,7 +28,7 @@ return array(
 			'atpcms_static_block' => array(
 				'displayName' => 'Static Block',
 				'class' => 'ATPCms\Model\StaticBlock',
-				'category' => 'CMS',
+                'category' => 'Content',
 				'displayColumns' => array('Category', 'IsActive'),
 				'defaultOrder' => 'identifier ASC',
 				'tabs' => array(
@@ -39,7 +39,7 @@ return array(
 			'atpcms_category' => array(
 				'displayName' => 'Category',
 				'class' => 'ATPCms\Model\Category',
-				'category' => 'CMS',
+                'category' => 'Content',
 				'displayColumns' => array('Name', 'Url', 'IsViewable'),
 				'defaultOrder' => 'name ASC',
 				'tabs' => array(
